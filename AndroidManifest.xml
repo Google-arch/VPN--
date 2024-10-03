@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="4.5.7"
+    android:compileSdkVersion="30"
+    android:compileSdkVersionCodename="11"
+    package="com.faster.cheetah"
+    platformBuildVersionCode="30"
+    platformBuildVersionName="11">
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30" />
+    <!-- 请求安装文件包 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 拥有完全的网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 查看网络连接 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 读取手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <!-- 查找设备上的账号 -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <!-- 读取联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 拍摄照片和视频 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 读取您共享存储空间中的内容 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 修改或删除您共享存储空间中的内容 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 更改网络连接性 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 查看WLAN连接 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+    <!-- 控制近距离通信 -->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="false" />
+    <queries>
+        <package
+            android:name="com.eg.android.AlipayGphone" />
+        <package android:name="hk.alipay.wallet" />
+    </queries>
+    <permission
+        android:name="com.faster.cheetah.SERVICE"
+        android:protectionLevel="0x00000002" />
+    <uses-permission android:name="com.faster.cheetah.SERVICE" />
+    <!-- 运行前台服务 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 开机启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 防止手机休眠 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission-sdk-23
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RRAD_EXTERNAL_STORAGE" />
+    <!-- 控制振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus" />
+    <supports-screens
+        android:anyDensity="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:resizeable="true" />
+    <!-- 使用闪光灯 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <application
+        android:theme="@7F120008"
+        android:label="@7F110037"
+        android:icon="@7F0E001E"
+        android:name="com.faster.cheetah.MainApplication"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:extractNativeLibs="true"
+        android:networkSecurityConfig="@7F140001"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name="com.faster.cheetah.ui.GuideActivity"
+            android:screenOrientation="1">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name="com.faster.cheetah.service.AlcedoService"
+            android:enabled="true"
+            android:exported="true" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="com.faster.cheetah.provider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@7F140002" />
+        </provider>
+        <activity
+            android:name="com.faster.cheetah.MainActivity"
+            android:launchMode="2"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.AboutActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.UserInfoActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.LineListActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.ProxyModelActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.ChangePasswordActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.ChangeMailActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.RetrievePasswordGetCodeActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.RetrievePasswordActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.BuyListActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.PerfectInfoActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.MyInfoActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.SwitchAccountActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.FeedbackActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.MessageListActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.MessageDetailActivity"
+            android:screenOrientation="1" />
+        <activity
+            android:name="com.faster.cheetah.ui.ChangeGroupActivity"
+            android:screenOrientation="1" />
+  
